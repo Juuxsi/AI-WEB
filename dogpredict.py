@@ -26,6 +26,7 @@ with open(class_names_path, "r", encoding="utf-8") as f:
 def load_model():
     model = tf.keras.models.load_model(
         model_path,
+        compile=False 
         custom_objects={"preprocess_input": preprocess_input}
     )
     return model
